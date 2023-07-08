@@ -53,5 +53,12 @@ namespace RegexOperation
                 }
             }
         }
+        public int Count_Frequency_Of_String(string message)
+        {   
+            string pattern = @"fox(es)?";
+
+        var n = Regex.Matches(message, pattern.ToString()).Count;
+            return n;
+        }
     }
 }
