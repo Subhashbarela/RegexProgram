@@ -38,5 +38,20 @@ namespace RegexOperation
                 Console.WriteLine("String is not valid...!");
             }
         }
+        public void Match_HTML_Tag(string message)
+        {       
+        string pattern = @"<.*?>";
+
+        var matches = Regex.Matches(message, pattern);
+
+            if (matches.Count > 0)
+            {
+                Console.WriteLine("Match found:");
+                foreach (Match m in matches)
+                {
+                    Console.WriteLine(m.Value);
+                }
+            }
+        }
     }
 }

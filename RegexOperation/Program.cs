@@ -13,7 +13,7 @@ namespace RegexOperation
             Pattern pattern = new Pattern();
             string ans = "";
             do {
-                Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking");
+                Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking \n3: Fetch HTML tag");
                 Console.WriteLine("Enter the choice");
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
@@ -30,6 +30,12 @@ namespace RegexOperation
                             Console.WriteLine("Enter the string : ");
                             string str = Console.ReadLine();
                             pattern.CharMatch(str);
+                            break;
+                        }
+                        case 3:
+                        {
+                            string str = "<p>The <code>Regex</code> is a compiled representation of a regular expression.</p>";
+                            pattern.Match_HTML_Tag(str);                          
                             break;
                         }
                     default:
