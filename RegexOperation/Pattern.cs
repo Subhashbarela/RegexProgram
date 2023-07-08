@@ -74,5 +74,10 @@ namespace RegexOperation
                 Console.WriteLine("File Type extention is not valid...!");
             }
         }
+        public bool URL_Address_Formate(string message, string pattern)
+        {
+            bool match = Regex.IsMatch(message, pattern);
+            return match;
+        }
     }
 }

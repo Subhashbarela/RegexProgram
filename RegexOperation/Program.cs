@@ -14,7 +14,7 @@ namespace RegexOperation
             string ans = "";
             do {
                 Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking \n3: Fetch HTML tag " +
-                    "\n4: Count occurence of char \n5: Check File Formate Extention");
+                    "\n4: Count occurence of char \n5: Check File Formate Extention \n6: Check URL Formate");
                 Console.WriteLine("\nEnter the choice....");
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
@@ -52,6 +52,22 @@ namespace RegexOperation
                             Console.WriteLine("Enter the File name : ");
                             string str = Console.ReadLine();
                             pattern.Image_File_Extention(str);                           
+                            break;
+                        }
+                    case 6:
+                        {
+                            string regax = @"((http|https)://)(www.)?[a-zA-Z0-9@:%._\+~#?&//=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%._\+~#?&//=]*)";
+                            Console.WriteLine("Enter the Website Address : ");
+                            string str = Console.ReadLine();
+                            bool isValid = pattern.URL_Address_Formate(str, regax);
+                            if (isValid)
+                            {
+                                Console.WriteLine("URL Format  is valid...!");
+                            }
+                            else
+                            {
+                                Console.WriteLine("URL Format is not valid...!");
+                            }
                             break;
                         }
                     default:
