@@ -13,8 +13,9 @@ namespace RegexOperation
             Pattern pattern = new Pattern();
             string ans = "";
             do {
-                Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking \n3: Fetch HTML tag \n4: Count occurence of char");
-                Console.WriteLine("Enter the choice");
+                Console.WriteLine("1:Charctor Checking \n2: Sequence Of Char Checking \n3: Fetch HTML tag " +
+                    "\n4: Count occurence of char \n5: Check File Formate Extention");
+                Console.WriteLine("\nEnter the choice....");
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
@@ -44,6 +45,13 @@ namespace RegexOperation
                             int count = pattern.Count_Frequency_Of_String(str);
                             Console.WriteLine($"There are {count} matches");
 
+                            break;
+                        }
+                    case 5:
+                        {
+                            Console.WriteLine("Enter the File name : ");
+                            string str = Console.ReadLine();
+                            pattern.Image_File_Extention(str);                           
                             break;
                         }
                     default:

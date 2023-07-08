@@ -60,5 +60,19 @@ namespace RegexOperation
         var n = Regex.Matches(message, pattern.ToString()).Count;
             return n;
         }
+        public void Image_File_Extention(string message)
+        {   
+            string pattern = @"([^\s]+(\.(?i)(jpe?g|png|gif|bmp))$)";
+
+        bool match = Regex.IsMatch(message, pattern);
+            if (match)
+            {
+                Console.WriteLine("File Type extention is valid...!");
+            }
+            else
+            {
+                Console.WriteLine("File Type extention is not valid...!");
+            }
+        }
     }
 }
